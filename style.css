@@ -1,0 +1,157 @@
+@font-face {
+    font-family: "Overpass";
+    src: url("fonts/static/Overpass-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Overpass-Bold";
+    src: url("fonts/static/Overpass-Bold.ttf");
+}
+
+:root {
+    --Orange: hsl(25, 97%, 53%);
+    --White: hsl(0, 0%, 100%);
+    --Light-Grey: hsl(217, 12%, 63%);
+    --Dark-Blue: hsl(213, 19%, 18%);
+    --Very-Dark-Blue: hsl(216, 12%, 8%);
+    --paragraph-size: 15px;
+}
+
+body {
+    background-color: var(--Very-Dark-Blue);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 5px;
+    color: var(--White);
+    font-family: "Overpass";
+    font-size: 12px;
+    text-align: center;
+}
+
+.card {
+    width: 90%;
+    max-width: 400px;
+    margin: 25px;
+    font-family: "Overpass", sans-serif;
+    background-color: var(--Dark-Blue);
+    padding: 40px;
+    border-radius: 30px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.card .star {
+    width: 15px;
+    height: 15px;
+    padding: 20px;
+    border-radius: 50%;
+    background-color: hsl(213, 19%, 22%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content h1 {
+    font-family: "Overpass-Bold", sans-serif;
+    color: var(--White);
+    margin-top: 40px;
+    font-size: 24px;
+}
+
+.content p {
+    font-family: "Overpass", sans-serif;
+    color: var(--Light-Grey);
+    line-height: 1.5;
+    font-size: var(--paragraph-size);
+}
+
+.rate {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+.rate div {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: hsl(213, 19%, 22%);
+    color: var(--Light-Grey);
+    text-align: center;
+    font-weight: 700;
+    line-height: 40px; /* Vertically centers the text */
+    margin-bottom: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.rate div.active {
+    background-color: var(--White);
+    color: var(--Very-Dark-Blue);
+}
+
+.rate div:hover {
+    background-color: var(--Orange);
+}
+
+.submit {
+    background-color: var(--Orange);
+    padding: 20px;
+    border-radius: 50px;
+    text-align: center;
+}
+.submit:hover {
+    background-color: var(--White);
+}
+.submit a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: var(--Very-Dark-Blue);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    line-height: 1;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .card {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .content h1 {
+        font-size: 20px;
+        margin-top: 30px;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+
+    .rate div {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+
+    .submit {
+        padding: 15px;
+        border-radius: 40px;
+    }
+}
